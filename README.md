@@ -4,6 +4,8 @@ A single-file SQLite FTS5 memory layer for AI agents: BM25 full-text retrieval a
 
 **Confidence: High (≥80%)** for the token-cost claim — our self_test measures the round-trip cost of representative queries (see numbers below, reproducible with one command). **Confidence: Medium (60–79%)** that recall quality matches grep-style memory for typical agent note sizes; BM25 needs the right keywords, not fuzzy semantics.
 
+<p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
+
 ## Problem
 
 The dominant agent-memory pattern is still "keep a Markdown file, paste it into context." It works at 1 KB and collapses at 100 KB: every session pays the full re-read cost, and the file silently grows because deleting context feels risky. Common mitigations (vector DBs, memory services) introduce a service dependency and an API — overkill for what is fundamentally a text-retrieval problem.
